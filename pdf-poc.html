@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PDF POC</title>
+
+    <script>
+      function exportAsPDF() {
+        let data = document.getElementById("print");
+        let opt = {
+          filename: "download.pdf",
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: { scale: 2 },
+        };
+        let worker = html2pdf().set(opt).from(data).save();
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .title {
+        font-weight: 700;
+        font-family: "Nunito Sans", sans-serif;
+      }
+      .text {
+        font-weight: 300;
+        font-family: "Nunito Sans", sans-serif;
+      }
+      td {
+        padding-left: 10px;
+        padding-bottom: 15px;
+        font-weight: 700;
+        font-family: "Nunito Sans", sans-serif;
+      }
+      th {
+        padding-right: 10px;
+        padding-bottom: 15px;
+        font-weight: 300;
+        font-family: "Nunito Sans", sans-serif;
+      }
+      .product {
+        padding-bottom: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="position: relative">
+      <img src="./images/fake-portal.png" style="width: 100%; height: 100%" />
+      <button
+        onclick="exportAsPDF()"
+        style="
+          position: absolute;
+          top: 11.7%;
+          right: 12.7%;
+          background-color: white;
+          border: 1px solid gainsboro;
+          border-radius: 5px;
+          height: 4.25%;
+          color: gray;
+        "
+      >
+        Download as PDF
+      </button>
+      <div style="position: absolute; left: -100vw; top: 0">
+        <div id="print">
+          <!-- PAGE 1 -->
+          <div style="width: 8.5in; height: 11in; position: relative">
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                position: absolute;
+                top: 0;
+              "
+            >
+              <div class="title" style="padding-left: 1in; padding-top: 2.5in">
+                <h2>Intouch In-Store Media Network</h2>
+                <h2>Campaign Report</h2>
+
+                <table
+                  cellspacing="0"
+                  style="
+                    padding-left: 0.7in;
+                    padding-top: 0.2in;
+                    border-width: 0;
+                  "
+                >
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Retailer
+                    </th>
+                    <td>OXXO</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Region
+                    </th>
+                    <td>Monterray, MX</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                      class="product"
+                    >
+                      Products
+                    </th>
+                    <td class="product">- Corona Light</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Corona Extra</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Modelo Especial</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Cerveza Gran</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Modelo Especial Retornable 1 Lt</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Michelob Ultra</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td class="product">- Bug Light</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    ></th>
+                    <td>- Cerveza Victoria Lata 330ml NR</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Dates
+                    </th>
+                    <td>17/08/2023 - 06/09/2023</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <img
+              src="./images/pdf-background.png"
+              style="
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+              "
+            />
+            <img
+              src="./images/logo.svg"
+              style="
+                width: 1.44in;
+                height: 0.66in;
+                position: relative;
+                top: 10.16in;
+                left: 3.19in;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                top: 10.23in;
+                left: 4.75in;
+                font-family: 'Nunito Sans', sans-serif;
+              "
+            >
+              <p style="margin: 0">Powered by</p>
+              <img
+                src="./images/intouch-logo.svg"
+                style="width: 1.7in; height: 0.33in"
+              />
+            </div>
+          </div>
+
+          <!-- PAGE 2 -->
+          <div style="width: 8.5in; height: 11in; position: relative">
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                position: absolute;
+                top: 0;
+              "
+            >
+              <div class="title" style="padding-left: 1in; padding-top: 2.7in">
+                <h2>Table of Contents</h2>
+
+                <table
+                  cellspacing="0"
+                  style="
+                    padding-left: 1.2in;
+                    padding-top: 0.9in;
+                    border-width: 0;
+                  "
+                >
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Campaign Summary
+                    </th>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      The Creatives
+                    </th>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Key Insights
+                    </th>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Campaign Performance
+                    </th>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Impression Distribution
+                    </th>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Sales Distribution
+                    </th>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      style="text-align: right; border-right: 1px solid black"
+                    >
+                      Weather Insights
+                    </th>
+                    <td>9</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <img
+              src="./images/pdf-background.png"
+              style="
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+              "
+            />
+          </div>
+
+          <!-- PAGE 3 -->
+          <div style="width: 8.5in; height: 11in; position: relative">
+            <div
+              style="
+                width: 100%;
+                height: 8.09in;
+                z-index: 10;
+                position: absolute;
+                top: 0;
+              "
+            >
+              <div class="title" style="padding-left: 1in; padding-top: 1.2in">
+                <h2>Campaign Summary</h2>
+                <img
+                  src="./images/budget.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/cpm.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/impressions.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/creatives.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/dates.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/days.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                  "
+                />
+                <img
+                  src="./images/sites.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                  "
+                />
+                <img
+                  src="./images/screens.png"
+                  style="
+                    width: 3.5in;
+                    height: 1.4in;
+                    border-width: 1px;
+                    border-color: gainsboro;
+                    border-style: solid;
+                    border-radius: 5px;
+                  "
+                />
+              </div>
+            </div>
+
+            <img
+              src="./images/pdf-background.png"
+              style="
+                width: 100%;
+                height: calc(100%-0.41in);
+                position: absolute;
+                top: 0;
+                left: 0;
+              "
+            />
+            <img
+              src="./images/logo.svg"
+              style="
+                width: 0.88in;
+                height: 0.4in;
+                position: relative;
+                top: 0.08in;
+                left: 7.52in;
+              "
+            />
+            <div
+              style="
+                width: 100%;
+                height: 0.41in;
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <p class="text" style="padding-left: 0.2in">
+                <strong style="font-weight: 700">Confidential </strong> -
+                Prepared on 21-09-2023
+              </p>
+              <strong style="padding-right: 0.2in">1</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
